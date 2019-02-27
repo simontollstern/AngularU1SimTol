@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.css']
 })
-export class UsersListComponent implements OnInit {
 
-  constructor() { }
+// The Users List component - The ul containing the users
+export class UsersListComponent {
+  @Input('userList') users: string[];
+  textColor: string = 'hsl(100, 50%, 50%)';
 
-  ngOnInit() {
+  // Runs when the "Toggle colors" button is pressed
+  // Changes the color of the text based on the current color
+  changeColor(){
+    if(this.textColor == 'hsl(100, 50%, 50%)'){
+      this.textColor = 'hsl(0, 50%, 50%)';
+    }else{
+      this.textColor = 'hsl(100, 50%, 50%)';
+    }
   }
 
+  constructor() { }
 }

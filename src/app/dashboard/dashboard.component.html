@@ -1,3 +1,4 @@
-<p>
-  dashboard works!
-</p>
+<div>
+  <app-users-list [userList]="userList"></app-users-list>
+  <app-edit-users (addUser)="onAddUser($event)" (removeUser)="onRemoveUser()"></app-edit-users>
+</div>
