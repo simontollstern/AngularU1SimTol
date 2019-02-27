@@ -8,7 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 // The Edit Users component - The input field and buttons for adding and removing users
 export class EditUsersComponent {
-  name: string;
+  name: string = "";
   @Output() addUser = new EventEmitter<string>();
   @Output() removeUser = new EventEmitter<any>();
 
